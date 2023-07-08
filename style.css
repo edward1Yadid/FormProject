@@ -1,0 +1,386 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    padding-left: 88px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3.3125rem;
+    align-items: center;
+
+}
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    width: 774px;
+    height: 795px;
+}
+
+.form-header {
+    color: black;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    font-family: 'Inter';
+    margin-bottom: 39px;
+}
+
+.form-description {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #575757;
+    text-align: start;
+    margin-bottom: 110px;
+}
+
+#form-Major-Data {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+
+}
+
+.Expiry-CVC {
+    display: flex;
+    flex-direction: row;
+    gap: 86px;
+    position: relative;
+}
+
+.label-form {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #575757;
+
+}
+
+.input-form {
+    display: block;
+    background: #EEEEEE;
+    border-bottom: 1px solid #9563FF;
+    border-radius: 10px;
+    width: 609px;
+    height: 66px;
+    margin-bottom: 41px;
+    border: none;
+    box-shadow: 0 1px 0 0 #9563FF;
+    padding-left: 20px;
+    appearance: none;
+}
+
+input[type='number'] {
+    appearance: textfield;
+}
+
+.input-form-card {
+    position: relative;
+}
+
+.imagemster {
+    position: absolute;
+    top: 129px;
+    left: 5px;
+    width: 5px;
+    height: 5px;
+}
+
+.card {
+
+    padding-left: 75px;
+    width: 557px;
+}
+
+.dicount {
+    position: relative;
+}
+
+#dicount-1 {
+    position: absolute;
+    bottom: 64px;
+    left: 550px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #9563FF;
+}
+
+.input-form-tiny-large {
+    background: #EEEEEE;
+    border-bottom: 1px solid #9563FF;
+    border-radius: 10px;
+    width: 283px;
+    height: 67px;
+    display: block;
+    margin-bottom: 41px;
+    border: none;
+    box-shadow: 0 1px 0 0 #9563FF;
+    padding-left: 20px;
+    appearance: none;
+}
+
+.input-form-tiny {
+    display: block;
+    background: #EEEEEE;
+    border-bottom: 1px solid #9563FF;
+    border-radius: 10px;
+    width: 240px;
+    height: 67px;
+    margin-bottom: 41px;
+    border: none;
+    box-shadow: 0 1px 0 0 #9563FF;
+    appearance: none;
+}
+
+.input-form::placeholder {
+    color: #A175FF;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+
+}
+
+.input-form-tiny::placeholder {
+    color: #A175FF;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+
+
+}
+
+.input-form-tiny-large::placeholder {
+    color: #A175FF;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+
+
+}
+
+#form-btn {
+    width: 242px;
+    height: 66px;
+    background: #9563FF;
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.container-second {
+    width: 503px;
+    height: 840px;
+    display: flex;
+    mix-blend-mode: multiply;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-top: 100px;
+    backdrop-filter: blur(2px);
+    background: radial-gradient(circle, rgba(149, 99, 255, 1) 10%, rgba(240, 240, 240, 1) 40%);
+    background-position-y: -200px;
+}
+
+.container-details {
+    width: 503px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    gap: 2.875rem;
+    position: relative;
+    padding-left: 60px;
+}
+
+
+
+.header-details {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    font-family: 'Inter';
+    color: #575757;
+    width: 161px;
+    height: 29px;
+    margin-top: 71px;
+    padding-left: -40px;
+}
+
+.price-details {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 77px;
+    color: #000000;
+}
+
+
+.majorProduct-1 {
+    display: flex;
+    flex-direction: row;
+    gap: 3.5rem;
+}
+
+.majorProduct-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 25px;
+
+}
+
+.discount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 25px;
+
+}
+
+.product1 {
+    display: flex;
+    flex-direction: column;
+    gap: .3125rem;
+    margin-bottom: 58px;
+}
+
+
+.margin-1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #575757;
+
+}
+
+.price-details-product1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    color: #000000;
+    margin: 0;
+}
+
+.price {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin: 0;
+}
+
+.hr-line {
+    border-top: #747474;
+    margin-top: 77px;
+    width: 409.09px;
+
+}
+
+.majorAmout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 41px;
+    margin-bottom: 48px;
+    padding-right: 25px;
+}
+
+
+i {
+    color: seagreen;
+}
+
+.Card-Number {
+    position: relative;
+}
+
+.Expiry-CVC {
+    position: relative;
+}
+
+#expireMM {
+    position: absolute;
+    bottom: 65px;
+    left: 10px;
+    width: 40px;
+    height: 20px;
+}
+
+#expireYY {
+    position: absolute;
+    bottom: 65px;
+    left: 70px;
+    width: 70px;
+    height: 20px;
+
+}
+
+.Cardholders-Name {
+    position: relative;
+
+}
+
+#name-error {
+    position: absolute;
+    bottom: 65px;
+    left: 450px;
+    width: 200px;
+    height: 20px;
+    color: red;
+
+}
+
+#card-error {
+
+    position: absolute;
+    bottom: 65px;
+    left: 450px;
+    width: 200px;
+    height: 20px;
+    color: red;
+}
+
+#Expiry-CVC-error {
+
+    position: absolute;
+    bottom: 75px;
+    left: 150px;
+    width: 150px;
+    height: 20px;
+    color: red;
+    text-justify: auto;
+}
+
+#discountError {
+    position: absolute;
+    bottom: 50px;
+    left: 350px;
+    width: 250px;
+    height: 20px;
+    color: red;
+    text-justify: auto;
+
+}
