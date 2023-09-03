@@ -50,12 +50,17 @@ cardnumberInput.addEventListener("keyup", function () {
 
   cardnumberInput.value = formattedNumber;
 });
+if (cardnumberInput.value.length >= 19) {
+  const array = cardnumberInput.value.split(" ");
+  console.log(array);
+  cardnumberInput.value = array.pop();
+}
 
 const digit = cardnumberInput.value.replace(/[^0-9]/g, "");
 const amexPattern = /^3[47][0-9]{12}$/;
 const visaPattern = /^4[0-9]{12}(?:[0-9]{3})?$/;
 const mastercardPattern = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$/;
-console.log(cardNumber);
+
 const src = document.querySelector("img");
 cardnumberInput.addEventListener("keypress", function () {
   if (visaPattern.test(cardNumber)) {
@@ -84,7 +89,7 @@ myForm.addEventListener("submit", function (event) {
     btn.disabled = true;
     btn.style.backgroundColor = "red";
     return;
-  } else if (!numberRegex.test(cardNumber)) {
+  } else if (!numberRegex.test(cardnumberInput.value)) {
     document.getElementById("Card-Number").style.color = "red";
     document.getElementById("card-error").innerText =
       "please wtire only number";
@@ -98,6 +103,7 @@ myForm.addEventListener("submit", function (event) {
       "please wtire codeCopun";
     btn.disabled = true;
     btn.style.backgroundColor = "red";
+
     return;
   } else if (!montTest || !yearTest) {
     document.getElementById("Expiry").style.color = "red";
