@@ -26,7 +26,7 @@
                 <label class="label-form" for="Cardholders-Name">Cardholders Name</label>
                 <input class="input-form" type="text" id="Name" name="Cardholders-Name" placeholder="PAULINA CHIMAROKE">
 
-                <span id="name-error"></span>
+                <span class="error" id="name-error"></span>
             </div>
 
             <div class="Card-Number">
@@ -34,18 +34,19 @@
                 <input class="input-form card" type="text" name="Card-Number" id="Card-Number"
                     placeholder="9870 3456 7890 6473">
                 <img id="imagemster" alt="" style="position: absolute; bottom: 59px; left: 7px;" src="">
-                <span id="card-error"></span>
+                <span class="error" id="card-error"></span>
             </div>
 
             <div class="Expiry-CVC">
                 <label class="label-form" for="Expiry">Expiry
                     <input class="input-form-tiny-large" type="text" name="Expiry" id="Expiry" placeholder="03 / 25">
-                    <span id="Expiry-CVC-error"></span>
+                    <span class="error" id="Expiry-error"></span>
                 </label>
 
                 <div class="cvc">
                     <label class="label-form" for="CVC">CVC
                         <input class="input-form-tiny" type="text" name="CVC" id="CVC" placeholder="654">
+                        <span class="error" id="cvc-error"></span>
                     </label>
                 </div>
             </div>
@@ -54,13 +55,13 @@
                 <label class="label-form" for="Discount-Code">Discount Code</label>
                 <input class="input-form" type="text" name="Discount-Code" id="Discount-Code"
                     placeholder="CHIKAMSO-20-OFF">
-                <p id="discountError"></p>
                 <span id="dicount-1">Apply</span>
                 </label>
             </div>
+            <div><button id="form-btn" type="submit">Pay</button>
+                <button id="form-btn" class="reset" type="reset">reset</button>
+            </div>
 
-            <button id="form-btn" type="submit">Pay</button>
-            <button id="form-btn" class="reset" type="reset">reset</button>
         </form>
 
     </div>

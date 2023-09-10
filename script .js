@@ -6,7 +6,11 @@ const creditNumber = document.getElementById("Card-Number");
 const Expiry = document.getElementById("Expiry");
 const CVC = document.getElementById("CVC");
 const discount = document.getElementById("Discount-Code");
-
+/////error
+const nameError = document.getElementById("name-error");
+const creditCardError = document.getElementById("card-error");
+const ExpiryError = document.getElementById("Expiry-error");
+const cvcError = document.getElementById("cvc-error");
 /////regex check for inputs
 const nameRegex = /^[A-Za-z\s]+$/;
 const numberRegex = /^[0-9]+$/;
@@ -33,25 +37,26 @@ function validation(event) {
   ) {
     if (!nameRegex.test(fullName.value)) {
       fullName.classList.add("invalidInput");
-      alert("Please provide a valid names!");
+      nameError.innerHTML = `Please provide a valid names!`;
     } else {
       fullName.classList.add("validInput");
     }
     if (!numberRegex.test(creditNumber.value.split(" ").join(""))) {
       creditNumber.classList.add("invalidInput");
-      alert("Please provide a valid creditNumber!");
+      creditCardError.innerHTML = `Please provide a valid creditNumber!`;
     } else {
       creditNumber.classList.add("validInput");
     }
     if (!ExpairyRegex.test(Expiry.value) && !checkDateExpairy()) {
+      ExpiryError.innerHTML = `Please provide a valid Expiry Date!`;
       Expiry.classList.add("invalidInput");
-      alert("Please provide a valid Expiry Date!");
     } else {
       Expiry.classList.add("validInput");
     }
     if (!CVCRegex.test(CVC.value)) {
       CVC.classList.add("invalidInput");
-      alert("Please provide a valid CVC number!");
+
+      cvcError.innerHTML = `Please provide a valid CVC number!`;
     } else {
       CVC.classList.add("validInput");
     }
@@ -90,13 +95,17 @@ function formValidation(
 const resetBtn = document.querySelector(".reset");
 resetBtn.addEventListener("click", removeAll);
 const inputsForClear = document.querySelectorAll("input");
+const spanErrorClear = document.querySelectorAll(".error");
 function removeAll() {
   inputsForClear.forEach((input) => {
     input.classList.remove("invalidInput");
     input.classList.remove("validInput");
-    Expiry.value = "";
-    discountArray = [];
   });
+  spanErrorClear.forEach((error) => {
+    error.innerHTML = "";
+  });
+  Expiry.value = "";
+  discountArray = [];
 }
 
 ////////////////////////////////////////////////4 digits with whitespace
@@ -172,8 +181,6 @@ function checkDscount(test1, test2, test3) {
   test1 = regex1.test(discountArray[0]);
   test2 = regex2.test(discountArray[1]);
   test3 = regex3.test(discountArray[2]);
-  console.log(discountArray);
+
   return test1 && test2 && test3;
 }
-
-console.log(checkDscount());
