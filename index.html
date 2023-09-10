@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="#">
     <title>form</title>
 </head>
 
@@ -19,12 +20,11 @@
 
 
 
-        <form id="form-Major-Data" action="" method="post">
+        <form id="form-Major-Data">
 
             <div class="Cardholders-Name">
                 <label class="label-form" for="Cardholders-Name">Cardholders Name</label>
-                <input class="input-form" type="text" id="Name" name="Cardholders-Name" placeholder="PAULINA CHIMAROKE"
-                    maxlength="19" required>
+                <input class="input-form" type="text" id="Name" name="Cardholders-Name" placeholder="PAULINA CHIMAROKE">
 
                 <span id="name-error"></span>
             </div>
@@ -32,22 +32,20 @@
             <div class="Card-Number">
                 <label class="label-form" for="Card-Number">Card Number </label>
                 <input class="input-form card" type="text" name="Card-Number" id="Card-Number"
-                    placeholder="9870 3456 7890 6473" maxlength="19" required>
-                <img id=" imagemster" alt="" style="position: absolute; bottom: 59px; left: 7px;" src="">
+                    placeholder="9870 3456 7890 6473">
+                <img id="imagemster" alt="" style="position: absolute; bottom: 59px; left: 7px;" src="">
                 <span id="card-error"></span>
             </div>
 
             <div class="Expiry-CVC">
                 <label class="label-form" for="Expiry">Expiry
-                    <input class="input-form-tiny-large" type="text" name="Expiry" id="Expiry" placeholder="03 / 25"
-                        maxlength="5" required>
+                    <input class="input-form-tiny-large" type="text" name="Expiry" id="Expiry" placeholder="03 / 25">
                     <span id="Expiry-CVC-error"></span>
                 </label>
 
                 <div class="cvc">
                     <label class="label-form" for="CVC">CVC
-                        <input class="input-form-tiny" type="number" name="CVC" id="CVC" placeholder="654" required
-                            maxlength="4">
+                        <input class="input-form-tiny" type="text" name="CVC" id="CVC" placeholder="654">
                     </label>
                 </div>
             </div>
@@ -55,12 +53,14 @@
             <div class="dicount">
                 <label class="label-form" for="Discount-Code">Discount Code</label>
                 <input class="input-form" type="text" name="Discount-Code" id="Discount-Code"
-                    placeholder="CHIKAMSO-20-OFF" required>
+                    placeholder="CHIKAMSO-20-OFF">
                 <p id="discountError"></p>
                 <span id="dicount-1">Apply</span>
+                </label>
             </div>
-            </label>
+
             <button id="form-btn" type="submit">Pay</button>
+            <button id="form-btn" class="reset" type="reset">reset</button>
         </form>
 
     </div>
@@ -120,7 +120,7 @@
             </div>
 
 
-            <script src="script .js"></script>
+            <script src="./script .js"></script>
 
 
 </body>

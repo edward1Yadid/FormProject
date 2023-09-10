@@ -65,7 +65,6 @@ body {
 .input-form {
     display: block;
     background: #EEEEEE;
-    border-bottom: 1px solid #9563FF;
     border-radius: 10px;
     width: 609px;
     height: 66px;
@@ -383,4 +382,19 @@ i {
     color: red;
     text-justify: auto;
 
+}
+
+.validInput {
+
+    box-shadow: 0 1px 0 0 green;
+    color: green;
+    border: 1px solid green"
+
+}
+
+.invalidInput {
+
+    box-shadow: 0 1px 0 0 rgb(255, 0, 0);
+    color: red;
+    border: 1px solid red
 }

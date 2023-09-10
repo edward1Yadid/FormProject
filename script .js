@@ -1,134 +1,179 @@
-const myForm = document.getElementById("form-Major-Data");
-const cardnameInput = myForm.elements["Name"];
-const cardnameInputError = myForm.elements["name-error"];
-const cardnumberInput = myForm.elements["Card-Number"];
-const expiryInput = myForm.elements["Expiry"];
-const discountInput = myForm.elements["Discount-Code"];
-const btn = document.getElementById("form-btn");
+///////////////////////////////////////////form validation////////////////////////////////////////////////////
+const formMajorData = document.getElementById("form-Major-Data");
+///////////////////////////////////////////inputs validation////////////////////////////////////////////////////
+const fullName = document.getElementById("Name");
+const creditNumber = document.getElementById("Card-Number");
+const Expiry = document.getElementById("Expiry");
+const CVC = document.getElementById("CVC");
+const discount = document.getElementById("Discount-Code");
 
-//-Cardholders Name
+/////regex check for inputs
 const nameRegex = /^[A-Za-z\s]+$/;
+const numberRegex = /^[0-9]+$/;
+const ExpairyRegex = /^(0[1-9]|1[0-2])\/[0-9]{2}$/;
 
-//--Card Number
-const numberRegex = /^[0-9]/;
-const cardNumber = cardnumberInput.value.replace(/\s/g, "");
+const CVCRegex = /^\d{3,4}$/;
+///valitaions of name input and email input
 
-//--Expiry
-const spaceRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2[0-9]|3[01])$/;
-const currentYear = new Date();
-const yearOnly = currentYear.getFullYear();
-const monthOnly = `0${currentYear.getMonth() + 1}`;
-const monthUser = expiryInput.value[0] + expiryInput.value[1];
-const monthAndYearRegex = /\d+/;
-const expiryArray = expiryInput.value.split("/");
-let year = `20${expiryInput.value[3] + expiryInput.value[4]}`;
-let month = expiryArray[0];
-let expiryRegexNumber = /^[0-9]{2}/;
-let montTest = monthAndYearRegex.test(expiryArray[0]);
-let yearTest = monthAndYearRegex.test(expiryArray[1]);
-//--Discount Code
-const regex1 = /^[A-Z]{8,8}$/;
-const regex2 = /^[0-9]{2,2}$/;
-const regex3 = /^[A-Z]{3,3}$/;
-const discountArray = discountInput.value.split("-");
+formMajorData.addEventListener("submit", validation);
+function validation(event) {
+  event.preventDefault();
 
-let test1 = regex1.test(discountArray[0]);
-let test2 = regex2.test(discountArray[1]);
-let test3 = regex3.test(discountArray[2]);
+  if (
+    !formValidation(
+      fullName,
+      creditNumber,
+      Expiry,
+      CVC,
+      discount,
+      test1,
+      test2,
+      test3
+    )
+  ) {
+    if (!nameRegex.test(fullName.value)) {
+      fullName.classList.add("invalidInput");
+      alert("Please provide a valid names!");
+    } else {
+      fullName.classList.add("validInput");
+    }
+    if (!numberRegex.test(creditNumber.value.split(" ").join(""))) {
+      creditNumber.classList.add("invalidInput");
+      alert("Please provide a valid creditNumber!");
+    } else {
+      creditNumber.classList.add("validInput");
+    }
+    if (!ExpairyRegex.test(Expiry.value) && !checkDateExpairy()) {
+      Expiry.classList.add("invalidInput");
+      alert("Please provide a valid Expiry Date!");
+    } else {
+      Expiry.classList.add("validInput");
+    }
+    if (!CVCRegex.test(CVC.value)) {
+      CVC.classList.add("invalidInput");
+      alert("Please provide a valid CVC number!");
+    } else {
+      CVC.classList.add("validInput");
+    }
+    if (!checkDscount()) {
+      discount.classList.add("invalidInput");
+      alert("Please provide a valid discount cupon!");
+    } else {
+      discount.classList.add("validInput");
+    }
+  } else {
+    alert("hi");
+  }
+}
 
-cardnumberInput.addEventListener("keyup", function () {
-  let cardNumber = cardnumberInput.value.replace(/\s/g, "");
-  console.log(cardNumber);
+function formValidation(
+  fullName,
+  creditNumber,
+  Expiry,
+  CVC,
+  test1,
+  test2,
+  test3
+) {
+  return (
+    nameRegex.test(fullName.value) &&
+    numberRegex.test(creditNumber.value) &&
+    spaceRegex.test(Expiry.value) &&
+    numberRegex.test(CVC.value) &&
+    test1 &&
+    test2 &&
+    test3
+  );
+}
 
+////reset button
+const resetBtn = document.querySelector(".reset");
+resetBtn.addEventListener("click", removeAll);
+const inputsForClear = document.querySelectorAll("input");
+function removeAll() {
+  inputsForClear.forEach((input) => {
+    input.classList.remove("invalidInput");
+    input.classList.remove("validInput");
+    Expiry.value = "";
+    discountArray = [];
+  });
+}
+
+////////////////////////////////////////////////4 digits with whitespace
+
+creditNumber.addEventListener("keyup", addSpaceAfter4digits);
+
+function addSpaceAfter4digits() {
   let formattedNumber = "";
+
+  let cardNumber = creditNumber.value.replace(/\s/g, "");
+
   for (let i = 0; i < cardNumber.length; i++) {
     if (i > 0 && i % 4 === 0) {
       formattedNumber += " ";
     }
     formattedNumber += cardNumber.charAt(i);
   }
+  creditNumber.value = formattedNumber.slice(0, 19); //max-length 19 automaticly
+}
+////////////////////////////////identify the Visa card number and insert a matching card////////////////////////
 
-  cardnumberInput.value = formattedNumber;
+///visa regex
+const visaPattern = /^4[0-9]{12}(?:[0-9]{3})?$/;
+const mastercardPattern = /^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/;
+const amexPattern = /^3[47][0-9]{12}$/;
+const src = document.getElementById("imagemster");
+creditNumber.addEventListener("keyup", function () {
+  if (visaPattern.test(creditNumber.value.split(" ").join(""))) {
+    src["src"] = "./images/visa.png";
+  } else if (mastercardPattern.test(creditNumber.value.split(" ").join(""))) {
+    src["src"] = "./images/mastercard.jpeg";
+  } else if (amexPattern.test(creditNumber.value.split(" ").join(""))) {
+    src["src"] = "./images/amex.PNG";
+  }
 });
-if (cardnumberInput.value.length >= 19) {
-  const array = cardnumberInput.value.split(" ");
-  console.log(array);
-  cardnumberInput.value = array.pop();
+
+///////////////////////////////////////////////////////////--Expiry Date///////////////////////////////////
+Expiry.addEventListener("keyup", function () {
+  if (Expiry.value.length === 2) {
+    Expiry.value += "/";
+  }
+});
+const expiryArray = Expiry.value.split("/").join("");
+
+const currentDate = new Date();
+const yearCurent = currentDate.getFullYear();
+const monthCurent = `0${currentDate.getMonth() + 1}`;
+
+const yearUser = `20${Expiry.value[3] + Expiry.value[4]}`;
+const monthUser = Expiry.value[0] + Expiry.value[1];
+
+function checkDateExpairy(yearCurent, yearUser, monthCurent, monthUser) {
+  if (yearCurent > yearUser) {
+    return false;
+  }
+  if (yearCurent == yearUser && monthCurent > monthUser) {
+    return false;
+  }
 }
 
-const digit = cardnumberInput.value.replace(/[^0-9]/g, "");
-const amexPattern = /^3[47][0-9]{12}$/;
-const visaPattern = /^4[0-9]{12}(?:[0-9]{3})?$/;
-const mastercardPattern = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$/;
+//--Discount Code
+const regex1 = /^[A-Z]{8,8}$/;
+const regex2 = /^[0-9]{2,2}$/;
+const regex3 = /^[A-Z]{3,3}$/;
 
-const src = document.querySelector("img");
-cardnumberInput.addEventListener("keypress", function () {
-  if (visaPattern.test(cardNumber)) {
-    src["src"] = "/images/visa.png";
-  } else if (mastercardPattern.test(cardNumber)) {
-    src["src"] = "/images/logo.jpeg";
-  } else if (amexPattern.test(cardNumber)) {
-    src["src"] = "/images/amex.PNG";
-  }
-});
+///discount Code
+let test1 = "";
+let test2 = "";
+let test3 = "";
+discount.addEventListener("input", checkDscount);
+function checkDscount(test1, test2, test3) {
+  let discountArray = discount.value.split("-");
+  test1 = regex1.test(discountArray[0]);
+  test2 = regex2.test(discountArray[1]);
+  test3 = regex3.test(discountArray[2]);
+  console.log(discountArray);
+  return test1 && test2 && test3;
+}
 
-expiryInput.addEventListener("keyup", function (event) {
-  if (expiryInput.value.length === 2) {
-    expiryInput.value += "/";
-  }
-});
-
-//------------------------------------/////
-myForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  if (!nameRegex.test(cardnameInput.value)) {
-    document.getElementById("Name").style.color = "red";
-    document.getElementById("name-error").innerText =
-      "please wtire only letters";
-    cardnameInput.value = "";
-    btn.disabled = true;
-    btn.style.backgroundColor = "red";
-    return;
-  } else if (!numberRegex.test(cardnumberInput.value)) {
-    document.getElementById("Card-Number").style.color = "red";
-    document.getElementById("card-error").innerText =
-      "please wtire only number";
-    cardnumberInput.value = "";
-    btn.disabled = true;
-    btn.style.backgroundColor = "red";
-    return;
-  } else if (!test1 || !test2 || !test3) {
-    document.getElementById("Discount-Code").style.color = "red";
-    document.getElementById("discountError").innerText =
-      "please wtire codeCopun";
-    btn.disabled = true;
-    btn.style.backgroundColor = "red";
-
-    return;
-  } else if (!montTest || !yearTest) {
-    document.getElementById("Expiry").style.color = "red";
-    document.getElementById("Expiry-CVC-error").innerText =
-      "please wtire MM/YY";
-    btn.disabled = true;
-    btn.style.backgroundColor = "red";
-    return;
-  } else if (montTest) {
-    if (expiryInput.value[0] + expiryInput.value[1] > 12) {
-      document.getElementById("Expiry").style.color = "red";
-      document.getElementById("Expiry-CVC-error").innerText =
-        "please wtire month between 1-12";
-      btn.disabled = true;
-      btn.style.backgroundColor = "red";
-      return;
-    } else if (year < currentYear.getFullYear()) {
-      document.getElementById("Expiry").style.color = "red";
-      document.getElementById("Expiry-CVC-error").innerText =
-        "please wtire  futrue year";
-      btn.disabled = true;
-      btn.style.backgroundColor = "red";
-      return;
-    }
-  }
-
-  myForm.submit();
-});
+console.log(checkDscount());
