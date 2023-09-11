@@ -106,6 +106,7 @@ function removeAll() {
   });
   Expiry.value = "";
   discountArray = [];
+  src["src"] = "";
 }
 
 ////////////////////////////////////////////////4 digits with whitespace
