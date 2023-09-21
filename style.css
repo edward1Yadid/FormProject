@@ -1,22 +1,10 @@
 body {
     margin: 0;
-    width: 100vw;
-    height: 100vh;
     padding-left: 88px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 3.3125rem;
-    align-items: center;
+
 
 }
 
-.container-form {
-    display: flex;
-    flex-direction: column;
-    width: 774px;
-    height: 795px;
-}
 
 .form-header {
     color: black;
@@ -34,7 +22,7 @@ body {
     line-height: 29px;
     color: #575757;
     text-align: start;
-    margin-bottom: 110px;
+    margin-bottom: 50px;
 }
 
 #form-Major-Data {
@@ -401,4 +389,43 @@ i {
     box-shadow: 0 1px 0 0 rgb(255, 0, 0);
     color: red;
     border: 1px solid red
+}
+
+
+#formContaier {
+    display: grid;
+
+    grid-template-areas:
+        "header container-second"
+        "container-form container-second";
+    width: 100%;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+.container-form {
+    grid-area: container-form;
+    width: 700px;
+
+}
+
+#header {
+    grid-area: header;
+    width: 700px;
+
+}
+
+.container-second {
+    grid-area: container-second;
+}
+
+@media screen and (max-width:1266px) {
+    #formContaier {
+
+        grid-template-areas:
+            "header "
+            "container-form"
+            "container-second";
+        margin-bottom: 20px;
+    }
 }

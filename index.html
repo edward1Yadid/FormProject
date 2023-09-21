@@ -11,117 +11,122 @@
 </head>
 
 <body>
+    <div id="formContaier">
+        <div class="container-form">
+            <div id="header">
+                <h1 class="form-header">Let’s Make Payment</h1>
 
-    <div class="container-form">
-        <h1 class="form-header">Let’s Make Payment</h1>
-
-        <p class="form-description">To start your subscription, input your card details to make payment.
-            You will be redirected to your banks authorization page .</p>
-
-
-
-        <form id="form-Major-Data">
-
-            <div class="Cardholders-Name">
-                <label class="label-form" for="Cardholders-Name">Cardholders Name</label>
-                <input class="input-form" type="text" id="Name" name="Cardholders-Name" placeholder="PAULINA CHIMAROKE">
-
-                <span class="error" id="name-error"></span>
+                <p class="form-description">To start your subscription, input your card details to make payment.
+                    You will be redirected to your banks authorization page .</p>
             </div>
 
-            <div class="Card-Number">
-                <label class="label-form" for="Card-Number">Card Number </label>
-                <input class="input-form card" type="text" name="Card-Number" id="Card-Number"
-                    placeholder="9870 3456 7890 6473">
-                <img id="imagemster" alt="" style="position: absolute; bottom: 59px; left: 7px;" src="">
-                <span class="error" id="card-error"></span>
-            </div>
 
-            <div class="Expiry-CVC">
-                <label class="label-form" for="Expiry">Expiry
-                    <input class="input-form-tiny-large" type="text" name="Expiry" id="Expiry" placeholder="03 / 25">
-                    <span class="error" id="Expiry-error"></span>
-                </label>
 
-                <div class="cvc">
-                    <label class="label-form" for="CVC">CVC
-                        <input class="input-form-tiny" type="text" name="CVC" id="CVC" placeholder="654">
-                        <span class="error" id="cvc-error"></span>
+
+            <form id="form-Major-Data">
+
+                <div class="Cardholders-Name">
+                    <label class="label-form" for="Cardholders-Name">Cardholders Name</label>
+                    <input class="input-form" type="text" id="Name" name="Cardholders-Name"
+                        placeholder="PAULINA CHIMAROKE">
+
+                    <span class="error" id="name-error"></span>
+                </div>
+
+                <div class="Card-Number">
+                    <label class="label-form" for="Card-Number">Card Number </label>
+                    <input class="input-form card" type="text" name="Card-Number" id="Card-Number"
+                        placeholder="9870 3456 7890 6473">
+                    <img id="imagemster" alt="" style="position: absolute; bottom: 59px; left: 7px;" src="">
+                    <span class="error" id="card-error"></span>
+                </div>
+
+                <div class="Expiry-CVC">
+                    <label class="label-form" for="Expiry">Expiry
+                        <input class="input-form-tiny-large" type="text" name="Expiry" id="Expiry"
+                            placeholder="03 / 25">
+                        <span class="error" id="Expiry-error"></span>
+                    </label>
+
+                    <div class="cvc">
+                        <label class="label-form" for="CVC">CVC
+                            <input class="input-form-tiny" type="text" name="CVC" id="CVC" placeholder="654">
+                            <span class="error" id="cvc-error"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="dicount">
+                    <label class="label-form" for="Discount-Code">Discount Code</label>
+                    <input class="input-form" type="text" name="Discount-Code" id="Discount-Code"
+                        placeholder="CHIKAMSO-20-OFF">
+                    <span id="dicount-1">Apply</span>
                     </label>
                 </div>
-            </div>
+                <div><button id="form-btn" type="submit">Pay</button>
+                    <button id="form-btn" class="reset" type="reset">reset</button>
+                </div>
 
-            <div class="dicount">
-                <label class="label-form" for="Discount-Code">Discount Code</label>
-                <input class="input-form" type="text" name="Discount-Code" id="Discount-Code"
-                    placeholder="CHIKAMSO-20-OFF">
-                <span id="dicount-1">Apply</span>
-                </label>
-            </div>
-            <div><button id="form-btn" type="submit">Pay</button>
-                <button id="form-btn" class="reset" type="reset">reset</button>
-            </div>
+            </form>
 
-        </form>
-
-    </div>
+        </div>
 
 
-    <div class="container-second">
+        <div class="container-second">
 
 
 
-        <div class="container-details">
-            <h2 class="header-details">You’re paying,</h2>
-            <span class="price-details">$450.00</span>
+            <div class="container-details">
+                <h2 class="header-details">You’re paying,</h2>
+                <span class="price-details">$450.00</span>
 
 
-            <div class="details-amount">
+                <div class="details-amount">
 
-                <div class="majorProduct-1">
-                    <div class="product1">
-                        <div>
-                            <p class="price-details-product1">Custom Gucci Shoes</p>
+                    <div class="majorProduct-1">
+                        <div class="product1">
+                            <div>
+                                <p class="price-details-product1">Custom Gucci Shoes</p>
+                            </div>
+                            <div><span class="margin-1">Size: m Color: Red</span></div>
                         </div>
-                        <div><span class="margin-1">Size: m Color: Red</span></div>
+                        <p class="price">$ 400.00</p>
                     </div>
-                    <p class="price">$ 400.00</p>
-                </div>
 
-                <div class="majorProduct-2">
-                    <div class="product1">
-                        <div>
-                            <p class="price-details-product1">Nivea Cream 400ml</p>
+                    <div class="majorProduct-2">
+                        <div class="product1">
+                            <div>
+                                <p class="price-details-product1">Nivea Cream 400ml</p>
+                            </div>
+                            <div><span class="margin-1">Size: m Color: Blue</span></div>
                         </div>
-                        <div><span class="margin-1">Size: m Color: Blue</span></div>
+                        <div>
+                            <p class="price">$ 50.00</p>
+                        </div>
                     </div>
-                    <div>
-                        <p class="price">$ 50.00</p>
+
+
+                    <div class="discount">
+                        <p class="price-details-product1">Discounts & Offers</p>
+                        <p class="price">$ 0.00</p>
                     </div>
+
+                    <hr class="hr-line">
+
+                    <div class="majorAmout">
+                        <p class="price-details-product1">Tax</p>
+                        <p class="price">$ 0.00</p>
+                    </div>
+                    <div class="majorAmout">
+                        <p class="price-details-product1">Total</p>
+                        <p class="price">$ 450.00</p>
+                    </div>
+
+
                 </div>
-
-
-                <div class="discount">
-                    <p class="price-details-product1">Discounts & Offers</p>
-                    <p class="price">$ 0.00</p>
-                </div>
-
-                <hr class="hr-line">
-
-                <div class="majorAmout">
-                    <p class="price-details-product1">Tax</p>
-                    <p class="price">$ 0.00</p>
-                </div>
-                <div class="majorAmout">
-                    <p class="price-details-product1">Total</p>
-                    <p class="price">$ 450.00</p>
-                </div>
-
-
             </div>
-
-
-            <script src="./script .js"></script>
+        </div>
+        <script src="./script .js"></script>
 
 
 </body>
