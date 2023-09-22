@@ -1,8 +1,7 @@
 body {
     margin: 0;
-
-
-
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -71,12 +70,14 @@ body {
     position: relative;
 }
 
-.imagemster {
+
+#imagemster {
     position: absolute;
-    top: 129px;
+    top: 40px;
     left: 5px;
-    width: 5px;
-    height: 5px;
+    width: 45px;
+    height: 30px;
+    display: none;
 }
 
 .card {
@@ -160,7 +161,8 @@ body {
 
 }
 
-#form-btn {
+#form-btns,
+#form-btnr {
     width: 242px;
     height: 66px;
     background: #9563FF;
@@ -541,7 +543,8 @@ i {
         gap: 1em;
     }
 
-    #form-btn {
+    #form-btns,
+    #form-btnr {
         width: 150px;
     }
 
