@@ -30,3 +30,6 @@ Simple to integrate into existing projects or use as a standalone library.
 To install this project, follow that link : https://edward1yadid.github.io/formProject/
 
 
+## Responsiveness
+
+This web application is designed to be responsive and optimized for screen sizes above 460 pixels. It provides an enhanced user experience on larger screens while remaining functional and accessible on smaller devices.

@@ -490,7 +490,7 @@ i {
     }
 }
 
-@media screen and (min-width:420px) and (max-width:650px) {
+@media screen and (min-width:460px) and (max-width:650px) {
     #formContaier {
         grid-template-areas:
             "header "
