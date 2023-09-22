@@ -186,9 +186,13 @@ function toggelSubmitBtn(event) {
     checkDateExpairyResult &&
     validationCvc()
   ) {
-    alert("hi");
+    alert(
+      "The validation was successful; we are passing your details to the credit company for processing."
+    );
   } else {
-    alert("SDFSF");
+    alert(
+      "The validation failed. We are unable to proceed with your credit card details at this time"
+    );
   }
 }
 
