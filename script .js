@@ -37,34 +37,39 @@ function validation(event) {
   ) {
     if (!nameRegex.test(fullName.value)) {
       fullName.classList.add("invalidInput");
-      nameError.innerHTML = `Please provide a valid names!`;
+      nameError.innerHTML = `<i class="fas fa-times-circle"></i>`;
     } else {
       fullName.classList.add("validInput");
+      nameError.innerHTML = `<i class="fas fa-check-circle"></i>`;
     }
     if (!numberRegex.test(creditNumber.value.split(" ").join(""))) {
       creditNumber.classList.add("invalidInput");
-      creditCardError.innerHTML = `Please provide a valid creditNumber!`;
+      creditCardError.innerHTML = `<i class="fas fa-times-circle"></i>`;
     } else {
       creditNumber.classList.add("validInput");
+      creditCardError.innerHTML = `<i class="fas fa-check-circle"></i>`;
     }
     if (!ExpairyRegex.test(Expiry.value) && !checkDateExpairy()) {
-      ExpiryError.innerHTML = `Please provide a valid Expiry Date!`;
+      ExpiryError.innerHTML = `<i class="fas fa-times-circle"></i>`;
       Expiry.classList.add("invalidInput");
     } else {
       Expiry.classList.add("validInput");
+      ExpiryError.innerHTML = `<i class="fas fa-check-circle"></i>`;
     }
     if (!CVCRegex.test(CVC.value)) {
       CVC.classList.add("invalidInput");
 
-      cvcError.innerHTML = `Please provide a valid CVC number!`;
+      cvcError.innerHTML = `<i class="fas fa-times-circle"></i>`;
     } else {
       CVC.classList.add("validInput");
+      CVC.innerHTML = `<i class="fas fa-check-circle"></i>`;
     }
     if (!checkDscount()) {
       discount.classList.add("invalidInput");
-      alert("Please provide a valid discount cupon!");
+      discount.innerHTML = `<i class="fas fa-times-circle"></i>`;
     } else {
       discount.classList.add("validInput");
+      discount.innerHTML = `<i class="fas fa-check-circle"></i>`;
     }
   } else {
     alert("hi");

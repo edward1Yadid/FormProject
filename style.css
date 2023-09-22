@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding-left: 88px;
+
 
 
 }
@@ -36,8 +36,10 @@ body {
 .Expiry-CVC {
     display: flex;
     flex-direction: row;
-    gap: 86px;
-    position: relative;
+    justify-content: space-between;
+    width: 631px;
+
+
 }
 
 .label-form {
@@ -63,9 +65,7 @@ body {
     appearance: none;
 }
 
-input[type='number'] {
-    appearance: textfield;
-}
+
 
 .input-form-card {
     position: relative;
@@ -101,7 +101,7 @@ input[type='number'] {
     color: #9563FF;
 }
 
-.input-form-tiny-large {
+.input-form-Expiry {
     background: #EEEEEE;
     border-bottom: 1px solid #9563FF;
     border-radius: 10px;
@@ -115,12 +115,12 @@ input[type='number'] {
     appearance: none;
 }
 
-.input-form-tiny {
+.input-form-CVC {
     display: block;
     background: #EEEEEE;
     border-bottom: 1px solid #9563FF;
     border-radius: 10px;
-    width: 240px;
+    width: 150px;
     height: 67px;
     margin-bottom: 41px;
     border: none;
@@ -138,7 +138,7 @@ input[type='number'] {
 
 }
 
-.input-form-tiny::placeholder {
+.input-form-CVC::placeholder {
     color: #A175FF;
     font-family: 'Inter';
     font-style: normal;
@@ -149,7 +149,7 @@ input[type='number'] {
 
 }
 
-.input-form-tiny-large::placeholder {
+.input-form-Expiry::placeholder {
     color: #A175FF;
     font-family: 'Inter';
     font-style: normal;
@@ -175,7 +175,7 @@ input[type='number'] {
 
 .container-second {
     width: 503px;
-    height: 840px;
+    height: 800px;
     display: flex;
     mix-blend-mode: multiply;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -334,7 +334,7 @@ i {
 #name-error {
     position: absolute;
     bottom: 65px;
-    left: 430px;
+    left: 600px;
     width: 200px;
     height: 20px;
     color: red;
@@ -346,7 +346,7 @@ i {
 
     position: absolute;
     bottom: 65px;
-    left: 450px;
+    left: 600px;
     width: 200px;
     height: 20px;
     color: red;
@@ -356,8 +356,8 @@ i {
 #Expiry-error {
 
     position: absolute;
-    bottom: 90px;
-    left: 120px;
+    bottom: 70px;
+    left: 250px;
     width: 150px;
     height: 20px;
     color: red;
@@ -366,8 +366,8 @@ i {
 
 #cvc-error {
     position: absolute;
-    bottom: 80px;
-    left: 450px;
+    bottom: 70px;
+    left: 600px;
     width: 200px;
     height: 20px;
     color: red;
@@ -394,24 +394,26 @@ i {
 
 #formContaier {
     display: grid;
-
+    padding-left: 20px;
     grid-template-areas:
         "header container-second"
         "container-form container-second";
     width: 100%;
-    height: 100vh;
+    height: auto;
     flex-wrap: wrap;
 }
 
 .container-form {
     grid-area: container-form;
     width: 700px;
+    height: auto;
+
 
 }
 
 #header {
     grid-area: header;
-    width: 700px;
+    min-width: 700px;
 
 }
 
@@ -419,7 +421,7 @@ i {
     grid-area: container-second;
 }
 
-@media screen and (max-width:1266px) {
+@media screen and (min-width:801px) and (max-width:1400px) {
     #formContaier {
 
         grid-template-areas:
@@ -427,5 +429,102 @@ i {
             "container-form"
             "container-second";
         margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+}
+
+
+@media screen and (min-width:650px) and (max-width:800px) {
+    #formContaier {
+        grid-template-areas:
+            "header "
+            "container-form"
+            "container-second";
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .form-description {
+
+        width: 400px;
+
+    }
+
+    .input-form,
+    .input-form-Expiry {
+        width: 300px;
+
+    }
+
+    .card {
+        width: 250px;
+    }
+
+    .Expiry-CVC {
+        flex-direction: column;
+        gap: 0.1125;
+    }
+
+    #dicount-1 {
+        left: 250px;
+    }
+
+}
+
+@media screen and (min-width:420px) and (max-width:650px) {
+    #formContaier {
+        grid-template-areas:
+            "header "
+            "container-form"
+            "container-second";
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .form-description {
+
+        width: 370px;
+        text-align: start;
+
+    }
+
+    .input-form,
+    .input-form-Expiry {
+        width: 300px;
+
+    }
+
+    .card {
+        width: 250px;
+    }
+
+    .Expiry-CVC {
+        flex-direction: column;
+        gap: 0.1125;
+    }
+
+    #dicount-1 {
+        left: 250px;
+    }
+
+    .container-second {
+        width: 400px;
+    }
+
+    .container-details {
+        padding-left: 0;
+        font-size: 1em;
+    }
+
+    .majorProduct-1 {
+        gap: 1em;
+    }
+
+    .majorProduct-2 {
+        gap: 1em;
+    }
+
+    #form-btn {
+        width: 150px;
     }
 }
