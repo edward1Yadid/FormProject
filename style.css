@@ -22,7 +22,7 @@ body {
     line-height: 29px;
     color: #575757;
     text-align: start;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 #form-Major-Data {
@@ -58,7 +58,7 @@ body {
     border-radius: 10px;
     width: 609px;
     height: 66px;
-    margin-bottom: 41px;
+    margin-bottom: 21px;
     border: none;
     box-shadow: 0 1px 0 0 #9563FF;
     padding-left: 20px;
@@ -91,7 +91,7 @@ body {
 
 #dicount-1 {
     position: absolute;
-    bottom: 64px;
+    bottom: 45px;
     left: 550px;
     font-family: 'Inter';
     font-style: normal;
@@ -431,6 +431,8 @@ i {
         margin-bottom: 20px;
         flex-wrap: wrap;
     }
+
+
 }
 
 
@@ -467,8 +469,23 @@ i {
 
     #dicount-1 {
         left: 250px;
+        bottom: 45px;
     }
 
+    #card-error,
+    #Expiry-error,
+    #name-error {
+        left: 300px;
+    }
+
+    #cvc-error {
+        left: 130px;
+        top: 165px;
+    }
+
+    #Expiry-error {
+        top: 30px;
+    }
 }
 
 @media screen and (min-width:420px) and (max-width:650px) {
@@ -526,5 +543,21 @@ i {
 
     #form-btn {
         width: 150px;
+    }
+
+
+    #card-error,
+    #Expiry-error,
+    #name-error {
+        left: 300px;
+    }
+
+    #cvc-error {
+        left: 130px;
+        top: 165px;
+    }
+
+    #Expiry-error {
+        top: 30px;
     }
 }
